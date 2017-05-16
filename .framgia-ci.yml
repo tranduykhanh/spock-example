@@ -7,7 +7,7 @@ test:
     ignore: true
     command:
       - ./gradlew test
-      - cp build/reports/tests/test/ .framgia-ci-reports/junit-gradle
+      - cp -R build/reports/tests/test/ .framgia-ci-reports/junit-gradle
   junit-ant:
     ignore: true
     command:
