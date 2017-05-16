@@ -7,7 +7,7 @@ test:
     ignore: true
     command:
       - ./gradlew test
-      - cp -R build/reports/tests/test/ .framgia-ci-reports/junit-gradle
+      - cp -R build/reports/tests/test/* .framgia-ci-reports/junit-gradle
   junit-ant:
     ignore: true
     command:
@@ -20,4 +20,4 @@ test:
       - mvn clean surefire-report:report-only -X | egrep -v "(^\[INFO\]|^\[DEBUG\])"
       - mvn site -DgenerateReports=false
       - mkdir -p .framgia-ci-reports/junit-maven
-      - cp -R target/site/ .framgia-ci-reports/junit-maven
+      - cp -R target/site/* .framgia-ci-reports/junit-maven
