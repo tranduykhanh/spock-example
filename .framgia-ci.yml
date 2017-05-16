@@ -17,6 +17,6 @@ test:
   junit-maven:
     ignore: true
     command:
-      - mvn clean surefire-report:report -X
+      - mvn clean surefire-report:report -X | egrep -v "(^\[INFO\]|^\[DEBUG\])"
       - mkdir -p .framgia-ci-reports/junit-maven
-      - cp target/site/tools.html .framgia-ci-reports/junit-maven/index.html
+      - cp target/site/surefire-report.html .framgia-ci-reports/junit-maven/index.html
