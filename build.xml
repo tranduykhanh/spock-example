@@ -104,6 +104,9 @@
       </batchtest>
       <formatter type="brief" usefile="false" />
     </junit>
+    <junitreport>
+      <report format="noframes"/>
+    </junitreport>
   </target>
 
   <target name="clean">

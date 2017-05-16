@@ -1,0 +1,22 @@
+url: http://smartstudy.edu.vn:8000
+
+project_type: java
+
+test:
+  junit-gradle:
+    ignore: true
+    command:
+      - ./gradlew test
+      - cp build/reports/tests/test/ .framgia-ci-reports/junit-gradle
+  junit-ant:
+    ignore: true
+    command:
+      - ant -buildfile build.xml
+      - mkdir -p .framgia-ci-reports/junit-ant
+      - cp junit-noframes.html .framgia-ci-reports/junit-ant/index.html
+  junit-maven:
+    ignore: true
+    command:
+      - mvn clean surefire-report:report -X
+      - mkdir -p .framgia-ci-reports/junit-maven
+      - cp target/site/tools.html .framgia-ci-reports/junit-maven/index.html

@@ -36,5 +36,11 @@ task collectJars(type: Copy) {
     from configurations.testRuntime
 }
 
+test {
+    reports {
+        junitXml.enabled = false
+        html.enabled = true
+    }
+}
 
 
